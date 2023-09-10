@@ -1,8 +1,8 @@
 package com.demo.demo.user;
+import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.lang.NonNull;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,8 +19,25 @@ public class UserController {
         this.userService = userService;
     }
 
+//    GET
     @GetMapping
     public List<User> getUsers() {
         return this.userService.getUsers();
+    }
+
+//    POST
+    @PostMapping
+    public void registerUser(@RequestBody User user) {
+        this.userService.createUser(user);
+    }
+
+//    PUT
+    @PutMapping
+//    public void updateUser(@RequestBody )
+
+//    DELETE
+    @DeleteMapping(path = "{userId}")
+    public void deleteUser(@PathVariable("userId") Long id) {
+        userService.deleteUser(id);
     }
 }
