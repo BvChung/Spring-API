@@ -21,6 +21,8 @@ public class User {
     private String email;
     private LocalDate dateOfBirth;
 
+    public User() {}
+
     public User(String name, String email, LocalDate dateOfBirth) {
         this.name = name;
         this.email = email;

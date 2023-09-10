@@ -9,7 +9,7 @@ import java.time.Month;
 import java.util.List;
 
 @Configuration
-public class StudentConfig {
+public class UserConfig {
 
 
     //   run method will be automatically executed when the application starts up
